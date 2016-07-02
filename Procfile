@@ -1,1 +1,1 @@
-web: gunicorn gettingstarted.wsgi --log-file -
+web: gunicorn --pythonpath weekend_rescuer weekend_rescuer.wsgi
