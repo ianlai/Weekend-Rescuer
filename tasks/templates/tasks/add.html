@@ -1,0 +1,7 @@
+<h2>Add a task</h2>
+
+<form action="{% url 'tasks:add' %}" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Add" />
+</form>

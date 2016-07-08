@@ -1,0 +1,13 @@
+<h1>Tasks</h1>
+{% if tasklist %}
+    <ul>
+    {% for task in tasklist %}
+        <li><a href="{% url 'tasks:detail' task.id %}">{{ task.task_title }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No tasks are available.</p>
+{% endif %}
+
+<a href={% url 'tasks:add' %}> Add a new task </a>
+
