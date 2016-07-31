@@ -1,5 +1,11 @@
 <h2>{{ task.task_title }}</h2>
-<ul>
-<li>{{ task.task_detail }}</li>
-</ul>
+
+<p>
+({{ task.task_detail }})<br>
+</p>
+
+<p>
+Task status: {{ task.task_status }}<br>
+</p>
+
 <a href={% url 'tasks:tasklist' %}> Return </a>

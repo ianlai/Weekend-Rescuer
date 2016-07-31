@@ -2,7 +2,12 @@
 {% if tasklist %}
     <ul>
     {% for task in tasklist %}
-        <li><a href="{% url 'tasks:detail' task.id %}">{{ task.task_title }}</a></li>
+    	{% ifequal task.task_status 'TODO' %}
+	    	<li><a href="{% url 'tasks:update' task.id %}">({{ task.task_status }}) {{ task.task_title }}</a></li>
+    	{% endifequal %}
+    	{% ifequal task.task_status 'DONE' %}
+	    	<li><a href="{% url 'tasks:detail' task.id %}">({{ task.task_status }}) {{ task.task_title }}</a></li>
+    	{% endifequal %}
     {% endfor %}
     </ul>
 {% else %}

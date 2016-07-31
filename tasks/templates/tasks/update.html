@@ -1,0 +1,13 @@
+<h2>{{ task.task_title }}</h2>
+
+<p>
+({{ task.task_detail }})<br>
+</p>
+
+<form action="{% url 'tasks:update' task.id %}" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Update" />
+</form>
+
+<a href={% url 'tasks:tasklist' %}> Return </a>
