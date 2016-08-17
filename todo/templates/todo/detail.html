@@ -1,0 +1,7 @@
+<h1> {{p.title}} </h1>
+
+<ul>
+    {% for c in p.choice_set.all %}
+        <li> {{ c }} </li>
+    {% endfor %}
+</ul>
